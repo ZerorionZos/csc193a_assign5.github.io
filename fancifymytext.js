@@ -36,8 +36,19 @@ function mooText() {
     let textArea = document.getElementById("textArea");
     let text = textArea.value.toUpperCase();
 
+    let sentences = text.split(".");
+
+    // Loop through the sentences
+    for (let i = 0; i < sentences.length - 1; i++)
+    {
+        let words = sentences[i].trim().split(" ");
+
+        // Add -MOO 
+        words[word.length - 1] = words[words.length - 1] + "-MOO";
+        sentences[i] = words.join(" ");
+    }
+    // Put sentence back together
+    text = sentences.join(".");
     textArea.value = text;
 
-    // Splits up the text into sentences
-    // Yeah, I got no idea how to do this sorry
 }
